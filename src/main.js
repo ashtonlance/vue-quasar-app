@@ -11,6 +11,8 @@ import Quasar from 'quasar'
 import router from './router'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
+import 'video.js/dist/video-js.min.css'
+import 'videojs-panorama/dist/videojs-panorama.css'
 
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(Buefy)

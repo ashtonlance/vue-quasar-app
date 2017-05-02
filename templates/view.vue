@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import videojs from 'video.js' 
 export default {
   data () {
     return {}
