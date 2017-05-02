@@ -2,7 +2,7 @@
   <q-layout>
     <div slot="header" class="toolbar">
       <q-toolbar-title :padding="0">
-        Quasar Framework v{{$q.version}}
+        VIP Video Player
       </q-toolbar-title>
     </div>
 
@@ -11,16 +11,63 @@
       "<router-view class="layout-view">" component
       if using subRoutes
     -->
-    <div class="layout-view">
-      <div class="logo-container non-selectable no-pointer-events">
-        <div class="logo" :style="position">
-          <img src="~assets/quasar-logo.png">
-          <p class="caption text-center">
-            <span class="desktop-only">Move your mouse.</span>
-            <span class="touch-only">Touch screen and move.</span>
-          </p>
+    <div id="homebackground" class="layout-view">
+      <div class="columns">
+        <div class="column">
+            <div class="top-banner has-text-centered">
+                <img src="~assets/bannerclear.png" style="max-height:none; width:auto; height:auto; max-width:75%; display:block; margin: 0 auto;">
+                <p>To see how we make our 360 videos and how to use this app, check out our "Behind the Scenes & Demo" video</p>
+            </div>
         </div>
-      </div>
+
+    </div>
+    <div class="columns">
+        <div class="column">
+            <div class="card">
+                <a class=""><img src="~assets/thumbnaildemo.png"></a>
+                <p>Behind the Scenes & Demo (non-VR)</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="columns no-margintop">
+        <div class="column">
+            <div class="card">
+                <a class=""><img src="~assets/thumbnailmontagenoplay.png"></a>
+                <p>VIP VR360 Montage (Local)</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <a class=""><img src="~assets/thumbnailcardmonroenoplay.png"></a>
+                <p>Card Monroe 360 (Local)</p>
+            </div>
+        </div>
+    </div>
+    <div class="columns no-margintop">
+        <div class="column">
+            <div class="card">
+                <a class=""><img src="~assets/thumbnailrubyfalls.png"></a>
+                <p>Ruby Falls (Local)</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <a class=""><img src="~assets/thumbnailmann.png"></a>
+                <p>Mann+Hummel (Local)</p>
+            </div>
+        </div>
+    </div>
+    <div class="columns no-margintop">
+        <div class="column">
+            <div class="card">
+                <a class=""><img src="~assets/thumbnailballet.png"></a>
+                <p>Tennessee Ballet (Local)</p>
+            </div>
+        </div>
+    </div>
     </div>
   </q-layout>
 </template>
@@ -79,15 +126,43 @@ export default {
 </script>
 
 <style lang="styl">
-.logo-container
-  width 192px
-  height 268px
-  perspective 800px
-  position absolute
-  top 50%
-  left 50%
-  transform translateX(-50%) translateY(-50%)
-.logo
-  position absolute
-  transform-style preserve-3d
+#homebackground
+    padding-top 5%
+    background-image url('~assets/background.png')
+    background-size cover
+    filter:brightness(1.25)
+
+.card img 
+    width 100% 
+    max-width 286px
+    margin-left 2.5%
+    margin-bottom 5px
+    border-radius 4px
+    box-shadow 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
+    display block
+
+    margin auto
+
+
+.card 
+    background-color rgba(100, 100, 100, 0.1)
+    box-shadow 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+    margin auto
+    width 75%
+    display block
+    padding-top 10px
+
+
+.card p 
+    text-align center
+    margin-bottom 1px
+    color white
+
+.top-banner 
+    background-color rgba(0, 0, 0, 0.2)
+    box-shadow 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+    padding 10px
+    margin-bottom 10px
+    color white
+
 </style>

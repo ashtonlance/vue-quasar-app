@@ -9,8 +9,11 @@ require(`quasar/dist/quasar.${__THEME}.css`)
 import Vue from 'vue'
 import Quasar from 'quasar'
 import router from './router'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
 
 Vue.use(Quasar) // Install Quasar Framework
+Vue.use(Buefy)
 
 Quasar.start(() => {
   /* eslint-disable no-new */
