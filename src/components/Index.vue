@@ -22,38 +22,37 @@
 
     </div>
     <div class="columns">
-        <div class="column">
-            
+        <div class="column">            
             <div class="card">
                 <a class=""><img src="~assets/thumbnaildemo.png"></a>
                 <p>Behind the Scenes & Demo (non-VR)</p>
-            </div>
-            
+            </div>            
         </div>
-
     </div>
-    <div class="columns no-margintop">
+    <div class="columns">
         <div class="column">
-            <router-link to="/video1">
+            <router-link to="/rubyfalls">
             <div class="card">
-                <a class=""><img src="~assets/thumbnailmontagenoplay.png"></a>
-                <p>VIP VR360 Montage</p>
+                <a class=""><img src="~assets/thumbnailrubyfalls.png"></a>
+                <p>Ruby Falls</p>
             </div>
             </router-link>
         </div>
 
         <div class="column">
+          <router-link to="/cardmonroe">
             <div class="card">
                 <a class=""><img src="~assets/thumbnailcardmonroenoplay.png"></a>
                 <p>Card Monroe 360</p>
             </div>
+          </router-link>
         </div>
     </div>
-    <div class="columns no-margintop">
+    <div class="columns">
         <div class="column">
             <div class="card">
-                <a class=""><img src="~assets/thumbnailrubyfalls.png"></a>
-                <p>Ruby Falls</p>
+                <a class=""><img src="~assets/thumbnailmontagenoplay.png"></a>
+                <p>VIP VR360 Montage</p>
             </div>
         </div>
 
@@ -64,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="columns no-margintop">
+    <div class="columns">
         <div class="column">
             <div class="card">
                 <a class=""><img src="~assets/thumbnailballet.png"></a>
@@ -84,15 +83,19 @@ export default {
   data () {
     return {
     }
+  },
+  mounted () {
+    screen.orientation.lock('portrait')
   }
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #homebackground {
-    padding-top: 5%;
-    background-size: cover;
+    background: linear-gradient(to bottom, #43c6ac, #191654);
+    padding-top: 10px;
     filter: brightness(1.25);
+    overflow-x: hidden;
 }
 
 .card {
@@ -100,6 +103,7 @@ export default {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     margin: auto;
     width: 80%;
+    max-width: 320px;
     display: block;
     padding-top: 10px;
     padding: 12px;
@@ -117,6 +121,7 @@ export default {
     p {
       text-align: center;
       margin-bottom: 1px;
+      color: white;
     }
 }
 
@@ -125,6 +130,9 @@ export default {
     padding: 10px;
     margin-bottom: 10px;
     color: white;
+    p {
+      margin-top: 10px;
+    }
 }
 
 </style>

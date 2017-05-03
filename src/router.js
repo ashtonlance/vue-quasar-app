@@ -23,6 +23,7 @@ export default new VueRouter({
   routes: [
     { path: '/', component: load('Index') }, // Default
     { path: '*', component: load('Error404') }, // Not found
-    { path: '/video1', component: load('video1') }
+    { path: '/rubyfalls', component: load('RubyFalls') },
+    { path: '/cardmonroe', component: load('CardMonroe') }
   ]
 })
