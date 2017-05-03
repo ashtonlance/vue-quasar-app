@@ -88,42 +88,43 @@ export default {
 }
 </script>
 
-<style lang="styl">
-#homebackground
-    padding-top 5%
-    background-size cover
-    filter:brightness(1.25)
+<style lang="scss">
+#homebackground {
+    padding-top: 5%;
+    background-size: cover;
+    filter: brightness(1.25);
+}
 
-.card img 
-    width 100% 
-    max-width 286px
-    margin-left 2.5%
-    margin-bottom 10px
-    border-radius 4px
-    display block
+.card {
+    background-color: rgba(100, 100, 100, 0.1);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    margin: auto;
+    width: 80%;
+    display: block;
+    padding-top: 10px;
+    padding: 12px;
 
-    margin auto
+    img {
+      width: 100% ;
+      max-width: 286px;
+      margin-left: 2.5%;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      display: block;
+      margin: auto;
+    }
 
+    p {
+      text-align: center;
+      margin-bottom: 1px;
+    }
+}
 
-.card 
-    background-color rgba(100, 100, 100, 0.1)
-    box-shadow 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
-    margin auto
-    width 80%
-    display block
-    padding-top 10px
-    padding 12px
-
-
-.card p 
-    text-align center
-    margin-bottom 1px
-
-.top-banner 
-    background-color rgba(0, 0, 0, 0.2)
-    
-    padding 10px
-    margin-bottom 10px
-    color white
+.top-banner {
+    background-color: rgba(0, 0, 0, 0.2);    
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
 
 </style>
