@@ -34,6 +34,7 @@ export default {
     initializePlayer () {
       var router = this.$router
       var videoElement = this.$refs.video
+      screen.orientation.lock('landscape')
 
       this.player = videojs(videoElement, {}, () => {
         window.addEventListener('resize', () => {
@@ -82,7 +83,6 @@ export default {
     }
   },
   mounted () {
-    screen.orientation.lock('landscape')
     this.initializePlayer()
   }
 
