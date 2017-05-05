@@ -20,13 +20,12 @@
 
 <script>
 import videojs from 'video.js'
-import panorama from 'videojs-panorama'
 
 export default {
   data () {
     return {
       videoInfo: {
-        videoURL: './statics/CardMonroe.mp4'
+        videoURL: './statics/360RobotDemo.mp4'
       }
     }
   },
@@ -44,7 +43,6 @@ export default {
           this.player.height(heightResize)
         })
       })
-
       var width = window.innerWidth
       var height = window.innerHeight
       this.player.width(width)
@@ -69,16 +67,8 @@ export default {
       videojs.registerComponent('backButton', backButton)
       this.player.getChild('controlBar').addChild('backButton', {})
 
-      panorama(this.player, {
-        autoMobileOrientation: true,
-        initFov: 100,
-        initLat: -5,
-        initLon: -180,
-        showNotice: false
-      })
-
-      this.player.on('VRModeOn', function () {
-        this.player.controlBar.fullscreenToggle.trigger('tap')
+      this.player.on('play', function () {
+        document.getElementsByClassName('vjs-big-play-button')[0].style.visibility = 'hidden'
       })
     }
   },
@@ -88,6 +78,7 @@ export default {
   destroyed () {
     this.player.dispose()
   }
+
 }
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <!-- root node required -->  
+  <!-- root node required -->
   <div>
     <!-- your content -->
     <router-view></router-view>
@@ -8,7 +8,7 @@
       <div id='videojs-panorama-player'>
         <div class='player-wrapper'>
           <div class='player-container'>
-            <video class='video-js vjs-default-skin' crossOrigin='anonymous' controls ref='video'>
+            <video id="video-custom" class='video-js vjs-default-skin' crossOrigin='anonymous' controls ref='video'>
             </video>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default {
           Button.apply(this, arguments)
         },
         handleClick: function () {
-          router.go(-1)
+          router.push({ path: '/' })
         },
         buildCSSClass: function () {
           return 'vjs-control vjs-back-button'
@@ -84,15 +84,26 @@ export default {
   },
   mounted () {
     this.initializePlayer()
+  },
+  destroyed () {
+    this.player.dispose()
   }
-
 }
 
 </script>
 
 <style lang='scss'>
-body.vjs-full-window .player-wrapper {
-  position: static;
+video,
+#video-custom,
+.video-js,
+.vjs-default-skin {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 #back-button {
@@ -104,26 +115,25 @@ body.vjs-full-window .player-wrapper {
 }
 
 .video-js .vjs-big-play-button {
-    font-size: 3em;
-    line-height: 1.5em;
-    height: 1.5em;
-    width: 2.55em;
-    display: block;
-    position: absolute;
-    top: 42%;
-    left: 44%;
-    padding: 0;
-    cursor: pointer;
-    opacity: 1;
-    border: none;
-    background-color: #2B333F;
-    -webkit-border-radius: 0.3em;
-    -moz-border-radius: 0.3em;
-    border-radius: 0.3em;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s;
+  font-size: 3em;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 2.55em;
+  display: block;
+  position: absolute;
+  top: 42%;
+  left: 44%;
+  padding: 0;
+  cursor: pointer;
+  opacity: 1;
+  border: none;
+  background-color: #2B333F;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
-
 </style>

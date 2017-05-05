@@ -8,7 +8,7 @@
       <div id='videojs-panorama-player'>
         <div class='player-wrapper'>
           <div class='player-container'>
-            <video class='video-js vjs-default-skin' crossOrigin='anonymous' controls ref='video'>
+            <video id="video-custom" class='video-js vjs-default-skin' crossOrigin='anonymous' controls ref='video'>
             </video>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default {
           Button.apply(this, arguments)
         },
         handleClick: function () {
-          router.go(-1)
+          router.push({ path: '/' })
         },
         buildCSSClass: function () {
           return 'vjs-control vjs-back-button'
@@ -91,8 +91,17 @@ export default {
 </script>
 
 <style lang='scss'>
-body.vjs-full-window .player-wrapper {
-  position: static;
+video,
+#video-custom,
+.video-js,
+.vjs-default-skin {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 #back-button {
