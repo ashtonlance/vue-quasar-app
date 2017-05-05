@@ -24,6 +24,9 @@ export default new VueRouter({
     { path: '/', component: load('Index') }, // Default
     { path: '*', component: load('Error404') }, // Not found
     { path: '/rubyfalls', component: load('RubyFalls') },
-    { path: '/cardmonroe', component: load('CardMonroe') }
+    { path: '/cardmonroe', component: load('CardMonroe') },
+    { path: '/ballettenn', component: load('BalletTenn') },
+    { path: '/mannhummel', component: load('MannHummel') },
+    { path: '/vipmontage', component: load('VIPMontage') }
   ]
 })

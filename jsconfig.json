@@ -4,7 +4,8 @@
         "bower_components",
         "platforms",
         "plugins",
-        "scripts"
+        "scripts",
+        "cordova"
     ]
 
 }

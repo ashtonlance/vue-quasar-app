@@ -50,25 +50,31 @@
     </div>
     <div class="columns">
         <div class="column">
-            <div class="card">
-                <a class=""><img src="~assets/thumbnailmontagenoplay.png"></a>
-                <p>VIP VR360 Montage</p>
-            </div>
+            <router-link to="/vipmontage">
+                <div class="card">
+                    <a class=""><img src="~assets/thumbnailmontagenoplay.png"></a>
+                    <p>VIP VR360 Montage</p>
+                </div>
+            </router-link>
         </div>
 
         <div class="column">
-            <div class="card">
-                <a class=""><img src="~assets/thumbnailmann.png"></a>
-                <p>Mann+Hummel</p>
-            </div>
+            <router-link to="/mannhummel">
+                <div class="card">
+                    <a class=""><img src="~assets/thumbnailmann.png"></a>
+                    <p>Mann+Hummel</p>
+                </div>
+            </router-link>
         </div>
     </div>
     <div class="columns">
         <div class="column">
+        <router-link to="/ballettenn">
             <div class="card">
                 <a class=""><img src="~assets/thumbnailballet.png"></a>
                 <p>Tennessee Ballet</p>
             </div>
+        </router-link>
         </div>
     </div>
     </div>

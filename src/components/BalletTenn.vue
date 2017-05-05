@@ -26,7 +26,7 @@ export default {
   data () {
     return {
       videoInfo: {
-        videoURL: './statics/'
+        videoURL: './statics/BalletTenn.mp4'
       }
     }
   },

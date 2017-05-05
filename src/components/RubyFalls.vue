@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    initializePlayer () {      
+    initializePlayer () {
       var router = this.$router
       var videoElement = this.$refs.video
       screen.orientation.lock('landscape')
