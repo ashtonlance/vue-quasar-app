@@ -8,7 +8,7 @@
       <div id='videojs-panorama-player'>
         <div class='player-wrapper'>
           <div class='player-container'>
-            <video id="video-custom" class='video-js vjs-default-skin' crossOrigin='anonymous' controls ref='video'>
+            <video id="video-custom" class='video-js vjs-default-skin' crossOrigin='anonymous' controls loop ref='video'>
             </video>
           </div>
         </div>
