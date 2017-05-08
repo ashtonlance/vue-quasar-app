@@ -14,6 +14,7 @@
           Menu
         </div>
         <q-drawer-link icon="live_tv" to="/">Videos</q-drawer-link>
+        <q-drawer-link icon="visibility" to="/360robotdemo">Behind the Scenes</q-drawer-link>
         <q-drawer-link icon="live_help" to="/about">About</q-drawer-link>
       </div>
     </q-drawer>

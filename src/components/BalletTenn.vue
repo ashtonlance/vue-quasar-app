@@ -36,19 +36,7 @@ export default {
       var videoElement = this.$refs.video
       screen.orientation.lock('landscape')
 
-      this.player = videojs(videoElement, {}, () => {
-        window.addEventListener('resize', () => {
-          var widthResize = window.innerWidth
-          var heightResize = window.innerHeight
-          this.player.width(widthResize)
-          this.player.height(heightResize)
-        })
-      })
-
-      var width = window.innerWidth
-      var height = window.innerHeight
-      this.player.width(width)
-      this.player.height(height)
+      this.player = videojs(videoElement, {}, () => {})
       this.player.src({ src: this.videoInfo.videoURL, type: 'video/mp4' })
 
       var Button = videojs.getComponent('Button')

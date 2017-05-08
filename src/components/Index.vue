@@ -15,6 +15,7 @@
           Menu
         </div>
         <q-drawer-link icon="live_tv" to="/">Videos</q-drawer-link>
+        <q-drawer-link icon="visibility" to="/360robotdemo">Behind the Scenes</q-drawer-link>
         <q-drawer-link icon="live_help" to="/about">About</q-drawer-link>
       </div>
     </q-drawer>
@@ -24,18 +25,7 @@
           <div class="top-banner has-text-centered">
             <img src="~assets/bannerclear.png" style="max-height:none; width:auto; height:auto; max-width:75%; display:block; margin: 0 auto;">
           </div>
-        </div>
-  
-      </div>
-      <div class="columns">
-        <div class="column">
-          <router-link to="/360robotdemo">
-            <div class="card">
-              <a class=""><img src="~assets/thumbnaildemo.png"></a>
-              <p>Behind the Scenes & Demo (non-VR)</p>
-            </div>
-          </router-link>
-        </div>
+        </div>  
       </div>
       <div class="columns">
         <div class="column">

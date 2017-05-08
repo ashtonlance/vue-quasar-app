@@ -36,19 +36,7 @@ export default {
       var videoElement = this.$refs.video
       screen.orientation.lock('landscape')
 
-      this.player = videojs(videoElement, {}, () => {
-        window.addEventListener('resize', () => {
-          var widthResize = window.innerWidth
-          var heightResize = window.innerHeight
-          this.player.width(widthResize)
-          this.player.height(heightResize)
-        })
-      })
-
-      var width = window.innerWidth
-      var height = window.innerHeight
-      this.player.width(width)
-      this.player.height(height)
+      this.player = videojs(videoElement, {}, () => {})
       this.player.src({ src: this.videoInfo.videoURL, type: 'video/mp4' })
 
       var Button = videojs.getComponent('Button')
@@ -113,26 +101,25 @@ video,
 }
 
 .video-js .vjs-big-play-button {
-    font-size: 3em;
-    line-height: 1.5em;
-    height: 1.5em;
-    width: 2.55em;
-    display: block;
-    position: absolute;
-    top: 42%;
-    left: 44%;
-    padding: 0;
-    cursor: pointer;
-    opacity: 1;
-    border: none;
-    background-color: #2B333F;
-    -webkit-border-radius: 0.3em;
-    -moz-border-radius: 0.3em;
-    border-radius: 0.3em;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s;
+  font-size: 3em;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 2.55em;
+  display: block;
+  position: absolute;
+  top: 42%;
+  left: 44%;
+  padding: 0;
+  cursor: pointer;
+  opacity: 1;
+  border: none;
+  background-color: #2B333F;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
-
 </style>
