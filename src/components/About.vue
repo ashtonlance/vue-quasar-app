@@ -1,60 +1,73 @@
 <template>
-  <q-layout>
-    <div slot="header" class="toolbar">
-      <button class="hide-on-drawer-visible" @click="$refs.drawer.open()">
-        <i>menu</i>
-      </button>
-      <q-toolbar-title :padding="0">
-        VIP VR 360
-      </q-toolbar-title>
+  <q-layout ref="layout" view="hHr LpR Fff">
+    <q-toolbar slot="header" class="toolbar">
+      <q-btn flat class="hide-on-drawer-visible" @click="$refs.layout.toggleLeft()">
+        <q-icon name="menu"></q-icon>
+      </q-btn>
+      <div class="q-toolbar-title">
+        About
+      </div>
+    </q-toolbar>
+
+    <div slot="left">
+      <q-side-link item icon="cloud" to="/">
+        <q-item-main label="Home"></q-item-main>
+      </q-side-link>
+      <q-side-link item icon="content_paste" to="/streaming" exact>
+        <q-item-main label="Streaming Videos"></q-item-main>
+      </q-side-link>
+      <q-side-link item icon="content_paste" to="/360RobotDemo">
+        <q-item-main label="Behind the Scenes"></q-item-main>
+      </q-side-link>
+      <q-side-link item icon="content_paste" to="/about">
+        <q-item-main label="About"></q-item-main>
+      </q-side-link>
     </div>
-    <q-drawer ref="drawer">
-      <div class="list platform-delimiter">
-        <div class="list-header">
-          Menu
-        </div>
-        <q-drawer-link icon="live_tv" to="/">Videos</q-drawer-link>
-        <q-drawer-link icon="visibility" to="/360robotdemo">Behind the Scenes</q-drawer-link>
-        <q-drawer-link icon="live_help" to="/about">About</q-drawer-link>
-      </div>
-    </q-drawer>
-  
+
     <router-view class="layout-view"></router-view>
-    <div class="card">
+    <q-card>
       <img src="~assets/banner.png" :height="150">
-      <div class="card-title">
+      <q-card-title>
         Video Ideas Productions
-      </div>
-      <div class="card-content">
+      </q-card-title>
+      <q-card-main>
         <p>Located in Chattanooga, TN, delivers integrated marketing solutions under one roof, saving you time, money and energy.</p>
         <div class="list item-inset-delimiter">
           <div class="item">
-            <i class="item-primary">phone</i>
+            <q-icon class="item-primary" name="phone"></q-icon>
             <div class="item-content">
               <a href="tel:423-867-2677">423-867-2677</a>
             </div>
             
           </div>
           <div class="item">
-            <i class="item-primary">email</i>
+            <q-icon class="item-primary" name="email"></q-icon>
             <div class="item-content">
               <a href="mailto:contact@videoideas.com">contact@videoideas.com</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  
-      <!-- Footer
-          <div slot="footer" class="toolbar"></div>
-          -->
+      </q-card-main>
+    </q-card>
   </q-layout>
 </template>
 
 <script>
+import { QLayout, QToolbar, QSideLink, QIcon, QItemMain, QBtn, QCard, QCardTitle, QCardMain } from 'quasar'
 export default {
   data () {
     return {}
+  },
+  components: {
+    QLayout,
+    QToolbar,
+    QSideLink,
+    QIcon,
+    QItemMain,
+    QBtn,
+    QCard,
+    QCardTitle,
+    QCardMain
   }
 }
 </script>

@@ -24,11 +24,8 @@ export default new VueRouter({
     { path: '/', component: load('Index') }, // Default
     { path: '*', component: load('Error404') }, // Not found
     { path: '/about', component: load('About') },
-    { path: '/rubyfalls', component: load('RubyFalls') },
-    { path: '/cardmonroe', component: load('CardMonroe') },
-    { path: '/ballettenn', component: load('BalletTenn') },
-    { path: '/mannhummel', component: load('MannHummel') },
-    { path: '/vipmontage', component: load('VIPMontage') },
-    { path: '/360robotdemo', component: load('360RobotDemo') }
+    { path: '/360robotdemo', component: load('360RobotDemo') },
+    { path: '/streaming', component: load('Streaming') },
+    { path: '/video', component: load('VideoPlayer') }
   ]
 })

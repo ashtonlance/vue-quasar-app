@@ -10,16 +10,23 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-runtime": "^6.0.0",
     "buefy": "^0.2.2",
     "fastclick": "^1.0.6",
+    "global": "^4.3.2",
     "material-design-icons": "^3.0.1",
     "moment": "^2.15.0",
-    "quasar-framework": "^0.13.10",
+    "quasar": "^0.0.18",
+    "quasar-cli": "^0.6.2",
+    "quasar-extras": "^0.0.7",
+    "quasar-framework": "git+https://git@github.com/quasarframework/quasar-edge.git",
     "roboto-fontface": "^0.7.0",
+    "video.js": "^5.19.2",
     "videojs-panorama": "^0.1.6",
-    "vue": "^2.3.0",
-    "vue-router": "^2.0.0"
+    "vue": "^2.3.4",
+    "vue-router": "^2.5.3",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

@@ -7,8 +7,7 @@
       <div class="q-toolbar-title">
         VIP VR360
       </div>
-    </q-toolbar>
-    
+    </q-toolbar>  
     <div slot="left">
       <q-side-link item icon="content_paste" to="/" exact>
         <q-item-main label="Home"></q-item-main>
@@ -29,9 +28,9 @@
           <div class="top-banner has-text-centered">
             <img src="~assets/bannerclear.png" style="max-height:none; width:auto; height:auto; max-width:75%; display:block; margin: 0 auto;">
           </div>
-        </div>  
+        </div>
       </div>
-      <div v-for="video in this.$store.state.videos" v-bind:key="video"  class="columns">
+      <div v-for="video in this.$store.state.streamingVideos" v-bind:key="video"  class="columns">
         <div class="column">
           <router-link to="/video">
             <div class="card" @click="setSrc(video)">
@@ -49,10 +48,12 @@
 
 <script>
 import { QLayout, QToolbar, QSideLink, QIcon, QItemMain, QBtn } from 'quasar'
+import axios from 'axios'
 export default {
   data () {
     return {
-      search: ''
+      search: '',
+      videos: ''
     }
   },
   components: {
@@ -65,6 +66,14 @@ export default {
   },
   mounted () {
     screen.orientation.lock('portrait')
+    axios.get(`https://s3.amazonaws.com/360vipvideos/videos.json`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.$store.state.streamingVideos = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   },
   methods: {
     setSrc: function (video) {
@@ -78,7 +87,8 @@ export default {
   background: linear-gradient(to top, #2b2e35, #2d3540);
   padding-top: 10px;
   overflow-x: hidden;
-  padding-bottom: 75px;
+  padding-bottom: 25px;
+  height: 100vh;
 }
 
 .card {

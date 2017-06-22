@@ -15,7 +15,6 @@
       </div>
     </div>
   </div>
-  </router-view>
 </template>
 
 <script>
@@ -61,7 +60,7 @@ export default {
           return 'vjs-control vjs-back-button'
         },
         createControlTextEl: function (backButton) {
-          return (backButton.innerHTML = '<i id="back-button">first_page</i>')
+          return (backButton.innerHTML = '<q-icon id="back-button" name="">< Back</q-icon>')
         }
       })
       videojs.registerComponent('backButton', backButton)

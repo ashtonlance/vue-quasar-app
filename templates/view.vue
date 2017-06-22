@@ -15,10 +15,10 @@
       </div>
     </div>
   </div>
-  </router-view>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import videojs from 'video.js'
 import panorama from 'videojs-panorama'
 
@@ -26,18 +26,19 @@ export default {
   data () {
     return {
       videoInfo: {
-        videoURL: './statics/'
+        videoURL: './statics/VIPMontage.mp4'
       }
     }
   },
   methods: {
     initializePlayer () {
       var router = this.$router
-      var videoElement = this.$refs.video
+      // var videoElement = this.$refs.video
+      var videoElement = document.getElementById('video-custom')
       screen.orientation.lock('landscape')
-
+      let videoUrl = this.$store.state.videoSrc
       this.player = videojs(videoElement, {}, () => {})
-      this.player.src({ src: this.videoInfo.videoURL, type: 'video/mp4' })
+      this.player.src({ src: videoUrl, type: 'video/mp4' })
 
       var Button = videojs.getComponent('Button')
       var backButton = videojs.extend(Button, {
@@ -71,9 +72,17 @@ export default {
     }
   },
   mounted () {
+    console.log(this.$store.state.videoSrc)
     this.initializePlayer()
+  },
+  destroyed () {
+    this.player.dispose()
+  },
+  computed: {
+    ...mapGetters([
+      'storedVideoSrc'
+    ])
   }
-
 }
 
 </script>
@@ -101,25 +110,26 @@ video,
 }
 
 .video-js .vjs-big-play-button {
-  font-size: 3em;
-  line-height: 1.5em;
-  height: 1.5em;
-  width: 2.55em;
-  display: block;
-  position: absolute;
-  top: 42%;
-  left: 44%;
-  padding: 0;
-  cursor: pointer;
-  opacity: 1;
-  border: none;
-  background-color: #2B333F;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  border-radius: 0.3em;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
+    font-size: 3em;
+    line-height: 1.5em;
+    height: 1.5em;
+    width: 2.55em;
+    display: block;
+    position: absolute;
+    top: 42%;
+    left: 44%;
+    padding: 0;
+    cursor: pointer;
+    opacity: 1;
+    border: none;
+    background-color: #2B333F;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
+
 </style>
