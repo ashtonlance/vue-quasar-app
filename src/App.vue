@@ -12,4 +12,20 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+.layout-header {
+  border-bottom-color: transparent !important;
+}
+.q-toolbar-title, .q-toolbar-subtitle {
+  margin-right: 20px;
+}
+.q-item > .q-icon {
+  font-size: 40px;
+  margin-right: 15px;
+}
+#menu-header {
+  text-align: right;
+  padding: 10px;
+  font-size: 30px;
+}
+</style>

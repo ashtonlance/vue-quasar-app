@@ -10,15 +10,13 @@ import Vue from 'vue'
 import Quasar from 'quasar'
 import Vuex from 'vuex'
 import router from './router'
-import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 import 'video.js/dist/video-js.min.css'
 import 'videojs-panorama/dist/videojs-panorama.css'
 import 'quasar-extras/material-icons'
 
 Vue.use(Vuex)
-Vue.use(Quasar) // Install Quasar Framework
-Vue.use(Buefy)
+Vue.use(Quasar)
 
 const store = new Vuex.Store({
   state: {

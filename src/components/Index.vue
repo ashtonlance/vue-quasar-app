@@ -1,7 +1,7 @@
 <template>
   <q-layout ref="layout" view="hHr LpR Fff">
     <q-toolbar slot="header" class="toolbar">
-      <q-btn flat class="hide-on-drawer-visible" @click="$refs.layout.toggleLeft()">
+      <q-btn flat @click="$refs.layout.toggleLeft()">
         <q-icon name="menu"></q-icon>
       </q-btn>
       <div class="q-toolbar-title">
@@ -10,16 +10,21 @@
     </q-toolbar>
     
     <div slot="left">
-      <q-side-link item icon="content_paste" to="/" exact>
+      <q-item-main id="menu-header" label="Menu"></q-item-main>
+      <q-side-link item to="/" exact>
+        <q-icon name="home"></q-icon>
         <q-item-main label="Home"></q-item-main>
       </q-side-link>
-      <q-side-link item icon="content_paste" to="/streaming" exact>
+      <q-side-link item to="/streaming" exact>
+        <q-icon name="cloud_circle"></q-icon>
         <q-item-main label="Streaming Videos"></q-item-main>
       </q-side-link>
-      <q-side-link item icon="content_paste" to="/360RobotDemo" exact>
+      <q-side-link item to="/360RobotDemo" exact>
+        <q-icon name="ondemand_video"></q-icon>
         <q-item-main label="Behind the Scenes"></q-item-main>
       </q-side-link>
-      <q-side-link item icon="content_paste" to="/about" exact>
+      <q-side-link item to="/about" exact>
+        <q-icon name="info"></q-icon>
         <q-item-main label="About"></q-item-main>
       </q-side-link>
     </div>
@@ -31,6 +36,12 @@
           </div>
         </div>  
       </div>
+      <q-transition
+        appear
+        group
+        enter="fadeIn"
+        leave="fadeOut"
+      >
       <div v-for="video in this.$store.state.videos" v-bind:key="video"  class="columns">
         <div class="column">
           <router-link to="/video">
@@ -42,13 +53,25 @@
             </div>
           </router-link>
         </div>
-      </div>      
+      </div> 
+    </q-transition>
+      <q-btn
+        v-back-to-top.animate="{offset: 500, duration: 200}"
+        round
+        color="dark"
+        class="fixed-bottom-right animate-pop"
+        style="margin: 0 15px 15px 0"
+      >
+        <q-icon name="keyboard_arrow_up"></q-icon>
+      </q-btn>
     </div>
   </q-layout>
 </template>
 
 <script>
-import { QLayout, QToolbar, QSideLink, QIcon, QItemMain, QBtn } from 'quasar'
+import { QLayout, QToolbar, QSideLink, QIcon, QItemMain, QBtn, BackToTop, QTransition } from 'quasar'
+import 'quasar-extras/animate/fadeIn.css'
+import 'quasar-extras/animate/fadeOut.css'
 export default {
   data () {
     return {
@@ -61,7 +84,11 @@ export default {
     QSideLink,
     QIcon,
     QItemMain,
-    QBtn
+    QBtn,
+    QTransition
+  },
+  directives: {
+    BackToTop
   },
   mounted () {
     screen.orientation.lock('portrait')
@@ -74,6 +101,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+
 #homebackground {
   background: linear-gradient(to top, #2b2e35, #2d3540);
   padding-top: 10px;
