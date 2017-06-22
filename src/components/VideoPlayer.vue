@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     initializePlayer () {
-      // var router = this.$router
       var videoElement = document.getElementById('video-custom')
       screen.orientation.lock('landscape')
       let videoUrl = this.$store.state.videoSrc
