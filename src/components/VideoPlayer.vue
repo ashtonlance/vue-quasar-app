@@ -8,7 +8,7 @@
       <div id='videojs-panorama-player'>
         <div class='player-wrapper'>
           <div class='player-container'>
-            <video id="video-custom" class='video-js vjs-sublime-skin' crossOrigin='anonymous' controls loop ref='video'>
+            <video id="video-custom" class='video-js vjs-sublime-skin' crossOrigin='anonymous' controls loop ref='video' playsinline>
             </video>
           </div>
         </div>
@@ -43,10 +43,6 @@ export default {
         initLon: -180,
         showNotice: false
       })
-
-      this.player.on('VRModeOn', function () {
-        this.player.controlBar.fullscreenToggle.trigger('tap')
-      })
     },
     goBack () {
       window.history.back()
@@ -71,6 +67,9 @@ export default {
 </script>
 
 <style lang='scss'>
+* {
+  overflow: hidden;
+}
 video,
 #video-custom,
 .video-js,

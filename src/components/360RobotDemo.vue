@@ -47,10 +47,6 @@ export default {
       this.player.width(width)
       this.player.height(height)
       this.player.src({ src: this.videoInfo.videoURL, type: 'video/mp4' })
-
-      this.player.on('play', function () {
-        document.getElementsByClassName('vjs-big-play-button')[0].style.visibility = 'hidden'
-      })
     },
     goBack () {
       window.history.back()
