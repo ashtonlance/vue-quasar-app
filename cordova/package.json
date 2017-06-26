@@ -14,14 +14,14 @@
                 "XWALK_MODE": "embedded",
                 "XWALK_MULTIPLEAPK": "true"
             },
-            "cordova-plugin-screen-orientation": {},
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-screen-orientation": {}
         }
     },
     "dependencies": {
         "cordova-ios": "~4.4.0",
         "cordova-plugin-crosswalk-webview": "~2.3.0",
-        "cordova-plugin-screen-orientation": "~2.0.1",
+        "cordova-plugin-screen-orientation": "^2.0.1",
         "cordova-plugin-whitelist": "1"
     }
 }
